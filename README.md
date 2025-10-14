@@ -8,6 +8,8 @@ ROSシリアルでLEDを制御するためのプログラム。色、明るさ�
   - M5Stackでも代用可能
   - ただし、プログラム中のNeopixel_PINはマイコンの種類によって異なるので注意
     - e.g.) M5StickCはデバイスの裏面で番号を確認でき、Neopixel_PIN = 32である.
+    - また、M5stickC & noetic-devel のときは、クラスの参照先が間違っているので、[このコミット](https://github.com/sawada10/hex_led/commit/b69572a22edfd829e5d3aa5e29f797c54c0ec27f)が大切（M5stickC & melodic develのときは大丈夫)
+      - cf.  [melodic-devel](https://github.com/ros-drivers/rosserial/blob/5ff397fc17b6935ccf90ed840bcb874bfd608fe9/rosserial_arduino/src/ros_lib/ros.h#L40)では上記のコミットの変更がマージされているが、[noetic-devel](https://github.com/ros-drivers/rosserial/blob/c169ae2173dcfda7cee567d64beae45198459400/rosserial_arduino/src/ros_lib/ros.h#L40)ではマージされていない
 - [LED](https://www.switch-science.com/products/6058?_pos=1&_sid=431122913&_ss=r "LED")
 - Arduino IDEを用いるとboardのバージョン等が理由でコンパイル時にエラーが出たりマイコンが再起動を繰り返したりすることがあるので、PlatformIOの使用を推奨
 
