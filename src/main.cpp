@@ -3,6 +3,7 @@
 // #include <ArduinoHardware.h>
 // #pragma message ("Using ArduinoHardware from: " __FILE__)
 // #include <ArduinoHardware.h>
+#define ESP_SERIAL
 #include <ros.h>
 #include <M5Unified.h>
 #include <std_msgs/UInt16.h>
