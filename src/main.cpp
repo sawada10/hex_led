@@ -1,8 +1,12 @@
 #include "FastLED.h"
-// #include <M5StickC.h>
-// #include <ArduinoHardware.h>
-// #pragma message ("Using ArduinoHardware from: " __FILE__)
-// #include <ArduinoHardware.h>
+/*
+ * In the case of M5stickC & noetic-devel, the class reference destination is incorrect.
+ * The follwing line is important. (It’s fine in the case of M5stickC & melodic-devel.)
+ * cf.) In melodic-devel, the following changese commit have already been merged,
+ * but in noetic-devel, they have not been merged yet.
+ * melodic-devel: https://github.com/ros-drivers/rosserial/blob/melodic-devel/rosserial_arduino/src/ros_lib/ros.h
+ * noetic-devel: https://github.com/ros-drivers/rosserial/blob/c169ae2173dcfda7cee567d64beae45198459400/rosserial_arduino/src/ros_lib/ros.h#L40
+ */
 #define ESP_SERIAL
 #include <ros.h>
 #include <M5Unified.h>
