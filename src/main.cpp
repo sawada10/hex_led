@@ -114,7 +114,7 @@ void setup() {
   FastLED.setBrightness(20);  // set the LED brightness to 5.
   FastLED.show();
 
-  nh.getHardware()->setBaud(115200);
+  nh.getHardware()->setBaud(57600);
   nh.initNode();
   nh.subscribe(led_mode_subscriber);
   nh.subscribe(led_color_subscriber);
@@ -125,7 +125,7 @@ void setup() {
 
 
 void loop() {
-  //nh.spinOnce();
+  nh.spinOnce();
   if (led_mode == 1) {
     for (int i = 0; i < NUM_LEDS; i++){
       leds[i].setRGB(r, g, b);
